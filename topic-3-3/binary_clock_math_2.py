@@ -14,11 +14,20 @@ selected_label = labels[selected_index]
 print("You entered:", clock_value)
 
 # YOUR CODE START
-# 1. Add a range decision for whole numbers from 0 through 63.
-# 2. Put your existing extraction, bit_text, reconstruction, and report
-#    inside the valid branch. Keep the selected label in the report.
-# 3. Inside that branch, add an even/odd decision using the remainder.
-# 4. In the invalid branch, print only the invalid message after the input echo.
+if clock_value < 0:
+    print("Below zero")
+elif clock_value >63:
+    print("Too large for six bits")
+else:
+    bits_text = format(clock_value, "06b")
+    check_value = int(bits_text, 2)
+    print(selected_label + ": " + bits_text)
+
+    if clock_value % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
 # YOUR CODE END
 
 # OUTPUT PATTERNS: move/uncomment these only in the appropriate branches.
