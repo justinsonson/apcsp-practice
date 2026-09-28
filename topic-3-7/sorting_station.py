@@ -7,7 +7,7 @@ mass = int(label[10:14])
 condition = label[14]
 
 is_damaged = condition == "D"
-is_oversize = mass > 50
+is_oversize = size > 50
 is_overweight = mass > 2000
 needs_inspection = is_damaged or is_oversize or is_overweight
 
